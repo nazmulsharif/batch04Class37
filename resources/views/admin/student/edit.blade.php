@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <div class="container">
-        @foreach($student as $std)
-        <form action="{{ Route('student.store' )}}" class="w-50 m-auto" method="post">
+
+        <form action="{{ Route('student.update',$std->id )}}" class="w-50 m-auto" method="post">
             @if(session()->has('message'))
                 <h4 class="alert alert-success">{{ session()->get('message') }}</h4>
             @endif
@@ -25,7 +25,7 @@
                 <input type="submit" class="btn btn-primary" name = "submit" value="Update" id="submit">
             </div>
         </form>
-            @endforeach
+
     </div>
 
 
